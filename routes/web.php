@@ -43,12 +43,6 @@ Route::delete('admin/products/delete', [ProductController::class, 'destroy'])
     ->name('admin.product.delete')
     ->middleware('is_admin');
 
-//PENGELOLAAN BUKU
-
-
-//UPDATE BOOK
-
-
 //PRINT PDF
 Route::get('admin/print_books', [AdminController::class, 'print_books'])
 ->name('admin.print.products')
