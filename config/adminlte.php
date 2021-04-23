@@ -233,31 +233,31 @@ return [
         [
             'text'        => 'Dashboard',
             'url'         => 'admin/products',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-fw fa-home',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Users',
             'url'         => 'admin/products',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-fw fa-user',
             'can'         => 'isAdmin',
         ],
         [
             'text'        => 'Pengelolaan Barang',
             'url'         => 'admin/products',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-fw fa-box',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Kategori Barang',
             'url'         => 'admin/categories',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-fw fa-folder',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Merk Barang',
             'url'         => 'admin/brands',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-fw fa-phone',
             'can'         => ['isUser','isAdmin'],
         ],
         [
