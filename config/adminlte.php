@@ -257,7 +257,7 @@ return [
         [
             'text'        => 'Merk Barang',
             'url'         => 'admin/brands',
-            'icon'        => 'fas fa-fw fa-phone',
+            'icon'        => 'fas fa-fw fa-pen',
             'can'         => ['isUser','isAdmin'],
         ],
         [
