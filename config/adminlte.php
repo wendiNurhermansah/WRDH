@@ -224,7 +224,7 @@ return [
     */
 
     'menu' => [
-        
+
         [
             'text' => 'search',
             'search' => true,
@@ -232,50 +232,42 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin/products',
+            'url'         => 'admin/dashboard',
             'icon'        => 'fas fa-fw fa-home',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Users',
-            'url'         => 'admin/products',
+            'url'         => 'admin/data_user',
             'icon'        => 'fas fa-fw fa-user',
             'can'         => 'isAdmin',
         ],
         [
             'text'        => 'Pengelolaan Barang',
-            'url'         => 'admin/products',
+            'url'         => 'admin/Produk',
             'icon'        => 'fas fa-fw fa-box',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Kategori Barang',
-            'url'         => 'admin/categories',
+            'url'         => 'admin/Kategori',
             'icon'        => 'fas fa-fw fa-folder',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Merk Barang',
-            'url'         => 'admin/brands',
+            'url'         => 'admin/Merek',
             'icon'        => 'fas fa-fw fa-pen',
             'can'         => ['isUser','isAdmin'],
         ],
         [
             'text'        => 'Laporan',
+            'url'         => 'admin/Laporan',
             'icon'        => 'fas fa-fw fa-book',
             'can'         => 'isAdmin',
-            'submenu'     =>[
-                                [
-                                    'text'        => ' Laporan Barang Masuk',
-                                    'url'         => 'admin/laporan/masuk',
-                                ],
-                                [
-                                    'text'        => 'Laporan Barang Keluar',
-                                    'url'         => 'admin/laporan/keluar',
-                                ],
-                            ]
+
         ],
-        
+
     ],
 
     /*

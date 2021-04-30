@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Data User</h1>
 @stop
 
 @section('content')
@@ -12,73 +12,24 @@
     @else
         Anda Login Sebagai User
     @endif
+    @if(session('sukses'))
+    <div class="alert alert-success" role="alert">
+        {{ session('sukses') }}
+    </div>
+    @endif
 
 <hr/>
     <div class="container-fluid">
-  <div class="row">
-    <div class="col-6 col-lg-3">
-      <div class="small-box bg-primary">
-        <div class="inner">
-          <h3>150</h3>
 
-          <p>Order Baru</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-bag"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <div class="col-6 col-lg-3">
-      <div class="small-box bg-info">
-        <div class="inner">
-          <h3>150</h3>
-
-          <p>Produk</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-pie-graph"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-    <div class="col-6 col-lg-3">
-      <div class="small-box bg-warning">
-        <div class="inner">
-          <h3>150</h3>
-
-          <p>Member</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-
-    <div class="col-6 col-lg-3">
-      <div class="small-box bg-success">
-        <div class="inner">
-          <h3>150</h3>
-
-          <p>Transaksi</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-stats-bars"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-    </div>
-  </div>
   <!-- table produk baru -->
   <div class="row">
     <div class="col">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Produk Baru</h4>
+          <h4 class="card-title">Data User</h4>
           <div class="card-tools">
-            <a href="#" class="btn btn-sm btn-primary">
-              More
+            <a href="{{route('admin.TambahData')}}" class="btn btn-sm btn-success">
+             Tambah Data User
             </a>
           </div>
         </div>
@@ -87,38 +38,32 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Kode</th>
-                <th>Nama</th>
-                <th>Kategori</th>
-                <th>Qty</th>
-                <th>Harga</th>
+                <th>name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Foto</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>PRO-1</td>
-                <td>Baju Atasan</td>
-                <td>Baju Anak</td>
-                <td>12 kodi</td>
-                <td>5.000</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>PRO-2</td>
-                <td>Gamis</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>25.000</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>PRO-3</td>
-                <td>Daster</td>
-                <td>Baju Wanita</td>
-                <td>20 kodi</td>
-                <td>125.000</td>
-              </tr>
+                @php
+                $a= 1;
+            @endphp
+                @foreach ($user1 as $i)
+
+                <tr>
+                    <td>{{$a++}}</td>
+                    <td>{{$i->name}}</td>
+                    <td>{{$i->username}}</td>
+                    <td>{{$i->email}}</td>
+                    <td>{{$i->photo}}</td>
+                    <td><a href="{{route('admin.edit', ['id' => $i->id])}}" class="btn btn-sm btn-success">Edit</a>
+                        <a href="{{route('admin.delete', ['id' => $i->id])}}" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
+                  </tr>
+                @endforeach
+
+
             </tbody>
           </table>
         </div>
